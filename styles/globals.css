@@ -24,6 +24,10 @@
   letter-spacing: 1px;
 }
 
+body {
+  user-select: none;
+}
+
 #banner1 {
   background: linear-gradient(to right, #0000002f, #00000083),
     url("../public/banner1.jpg");

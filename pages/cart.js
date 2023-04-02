@@ -55,7 +55,7 @@ const Cart = () => {
             {/* HEADING AND PARAGRAPH END */}
 
             {/* CART CONTENT START */}
-            <div className="flex flex-col lg:flex-row gap-12 py-10">
+            <div className="flex flex-col lg:flex-row gap-12 md:py-10 py-5">
               {/* CART ITEMS START */}
               <div className="flex-[2]">
                 <div className="md:text-lg text-base font-bold">Cart Items</div>

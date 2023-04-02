@@ -60,7 +60,7 @@ const Header = () => {
     <header
       className={`w-full h-[70px] md:h-[80px] my-2 lg:px-3 bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
     >
-      <Wrapper className="w-full h-[60px] flex justify-between items-center px-3">
+      <Wrapper className="w-full h-[60px] flex justify-between items-center">
         <Link href="/">
           <Image src={Logo} alt="" className="w-[95px] md:w-[110px] mr-20" />
         </Link>

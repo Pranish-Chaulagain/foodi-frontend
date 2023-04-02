@@ -17,7 +17,7 @@ const MenuMobile = ({
   categories,
 }) => {
   return (
-    <ul className="lg:hidden flex flex-col font-bold absolute md:top-[80px] top-[70px] left-0 w-full h-[100vh] bg-white border-t text-black">
+    <ul className="lg:hidden flex flex-col font-bold absolute md:top-[88px] top-[78px] left-0 w-full h-[100vh] bg-white border-t text-black">
       <SearchBar setMobileMenu={setMobileMenu} />
       {data.map((item) => {
         return (

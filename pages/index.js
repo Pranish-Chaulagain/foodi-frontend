@@ -3,7 +3,6 @@ import NewsLetter from "@/components/NewsLetter";
 import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/Wrapper";
 import { fetchDataFromApi } from "@/utils/api";
-import Image from "next/image";
 
 export default function Home({ products }) {
   return (
@@ -34,7 +33,7 @@ export default function Home({ products }) {
           <h1 className="text-center text-2xl md:text-3xl mb-3 font-semibold leading-tight">
             Featured Menus
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-5 gap-3 my-14 px-5 md:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-5 gap-3 my-14">
             {products?.data?.map((product) => (
               <ProductCard key={product?.id} data={product} />
             ))}

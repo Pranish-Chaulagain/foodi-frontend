@@ -15,7 +15,7 @@ const about = () => {
             /<span>About</span>
           </div>
           <div className="grid md:grid-cols-2 grid-cols-1 gap-10">
-            <div className="py-20">
+            <div className="md:py-10">
               <h1 className="md:text-4xl text-3xl font-semibold mb-4">
                 About Us
               </h1>
@@ -78,34 +78,34 @@ const about = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-end gap-5">
-              <div className="grid grid-cols-1 gap-5 md:pt-10">
+            <div className="flex items-center justify-end md:gap-5 gap-2">
+              <div className="grid grid-cols-1 md:gap-5 gap-2 md:pt-10">
                 <Image
                   src="/a1.jpg"
-                  className="h-[320px] w-[280px] object-cover rounded-md"
+                  className="md:h-[320px] h-[200px] md:w-[280px] object-cover rounded-md"
                   width={300}
                   height={300}
                   alt="..."
                 />
                 <Image
                   src="/a2.jpg"
-                  className="h-[320px] w-[280px] object-cover rounded-md"
+                  className="md:h-[320px] h-[200px] md:w-[280px] object-cover rounded-md"
                   width={300}
                   height={300}
                   alt="..."
                 />
               </div>
-              <div className="grid grid-cols-1 gap-5">
+              <div className="grid grid-cols-1 md:gap-5 gap-2">
                 <Image
                   src="/a3.jpg"
-                  className="h-[320px] w-[280px] object-cover rounded-md"
+                  className="md:h-[320px] h-[200px] md:w-[280px] object-cover rounded-md"
                   width={300}
                   height={300}
                   alt="..."
                 />
                 <Image
                   src="/a4.jpg"
-                  className="h-[320px] w-[280px] object-cover rounded-md"
+                  className="md:h-[320px] h-[200px] md:w-[280px] object-cover rounded-md"
                   width={300}
                   height={300}
                   alt="..."

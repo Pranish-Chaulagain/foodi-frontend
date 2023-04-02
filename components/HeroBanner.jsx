@@ -12,11 +12,11 @@ const HeroBanner = () => {
           infiniteLoop={true}
           showThumbs={false}
           showStatus={false}
-          interval={4000}
+          interval={6000}
           renderArrowPrev={(clickHandler, hasPrev) => (
             <div
               onClick={clickHandler}
-              className="absolute right-[42px] md:right-[62px] top-3 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-l-md"
+              className="absolute right-[55px] md:right-[70px] top-3 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
             >
               <BiArrowBack className="text-sm md:text-lg" />
             </div>
@@ -24,7 +24,7 @@ const HeroBanner = () => {
           renderArrowNext={(clickHandler, hasNext) => (
             <div
               onClick={clickHandler}
-              className="absolute right-3 top-3 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-r-md"
+              className="absolute right-3 top-3 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
             >
               <BiArrowBack className="rotate-180 text-sm md:text-lg" />
             </div>
@@ -44,7 +44,7 @@ const HeroBanner = () => {
                 in every order.
               </p>
               <button
-                className="px-5 h-[54px] rounded-md bg-white text-black md:text-lg text-base font-medium transition-transform 
+                className="px-5 h-[54px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now
@@ -66,7 +66,7 @@ const HeroBanner = () => {
                 savory, our menu has something to satisfy every craving.
               </p>
               <button
-                className="px-5 h-[54px] rounded-md bg-white text-black md:text-lg text-base font-medium transition-transform 
+                className="px-5 h-[54px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now
@@ -89,7 +89,7 @@ const HeroBanner = () => {
                 house.
               </p>
               <button
-                className="px-5 h-[54px] rounded-md bg-white text-black md:text-lg text-base font-medium transition-transform 
+                className="px-5 h-[54px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now

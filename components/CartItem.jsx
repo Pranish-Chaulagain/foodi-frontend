@@ -21,7 +21,7 @@ const CartItem = ({ data }) => {
   return (
     <div className="flex py-5 gap-3 md:gap-5 border-b">
       {/* IMAGE START */}
-      <div className="shrink-0 aspect-square w-[50px] md:w-[120px]">
+      <div className="shrink-0 aspect-square w-[80px] md:w-[120px]">
         <Image
           width={120}
           height={120}
@@ -34,8 +34,17 @@ const CartItem = ({ data }) => {
       <div className="w-full flex flex-col">
         <div className="flex flex-col md:flex-row justify-between">
           {/* PRODUCT TITLE */}
-          <div className="text-lg md:text-xl font-semibold text-black/[0.8]">
-            {p.name}
+          <div className="flex justify-between items-center">
+            <div className="text-lg md:text-xl font-semibold text-black/[0.8]">
+              {p.name}
+            </div>
+
+            <div className="md:hidden block">
+              <RiDeleteBin6Line
+                onClick={() => dispatch(removeFromCart({ id: data.id }))}
+                className="cursor-pointer text-black/[0.5] hover:text-black text-lg"
+              />
+            </div>
           </div>
 
           {/* PRODUCT SUBTITLE MOBILE */}
@@ -54,7 +63,7 @@ const CartItem = ({ data }) => {
         </div>
 
         <div className="flex items-center justify-between mt-4">
-          <div className="flex items-center gap-2 md:gap-10 text-black/[0.5] text-sm md:text-base">
+          <div className="flex items-center gap-2 md:gap-10 text-black/[0.5] text-sm md:text-base flex-wrap">
             <div className="flex items-center gap-1">
               <div className="font-semibold">Option:</div>
               <select
@@ -92,10 +101,12 @@ const CartItem = ({ data }) => {
               </select>
             </div>
           </div>
-          <RiDeleteBin6Line
-            onClick={() => dispatch(removeFromCart({ id: data.id }))}
-            className="cursor-pointer text-black/[0.5] hover:text-black md:text-xl text-base"
-          />
+          <div className="md:block hidden">
+            <RiDeleteBin6Line
+              onClick={() => dispatch(removeFromCart({ id: data.id }))}
+              className="cursor-pointer text-black/[0.5] hover:text-black text-xl"
+            />
+          </div>
         </div>
       </div>
     </div>
