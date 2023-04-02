@@ -17,13 +17,13 @@ const NewsLetter = () => {
             <input
               type="text"
               placeholder="Enter your email"
-              className="pr-3 pl-9 md:py-2.5 py-2 rounded-md text-sm text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-inset focus:ring-[#00a34f] lg:w-80 w-full"
+              className="pr-3 pl-9 py-2.5 rounded-md text-sm text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-inset focus:ring-[#00a34f] lg:w-80 w-full"
             />
             <div className="absolute left-3 text-gray-400">
               <FiMail />
             </div>
             <button
-              className="rounded-md px-4 md:text-base text-sm text-white md:h-[40px] h-[36px] bg-[#00a34f] transition-transform 
+              className="rounded-md px-4 md:text-base text-sm text-white h-[40px] bg-[#00a34f] transition-transform 
                   active:scale-95 hover:opacity-75"
             >
               Subscribe
