@@ -1,10 +1,11 @@
+import CategoryCard from "@/components/CategoryCard";
 import HeroBanner from "@/components/HeroBanner";
 import NewsLetter from "@/components/NewsLetter";
 import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/Wrapper";
 import { fetchDataFromApi } from "@/utils/api";
 
-export default function Home({ products }) {
+export default function Home({ products, categories }) {
   return (
     <main>
       <HeroBanner />
@@ -25,15 +26,29 @@ export default function Home({ products }) {
 
         {/* ----------------------- heading and paragraph end ----------------------- */}
 
+        <div className="md:pt-14 pt-8">
+          <h3 className="uppercase text-center text-sm text-[#00a34f]">
+            categories
+          </h3>
+          <h1 className="text-center text-2xl md:text-3xl mb-3 font-semibold leading-tight">
+            Shop by Category
+          </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-5 gap-3 md:my-14 my-8">
+            {categories?.data?.map((category) => (
+              <CategoryCard key={category?.id} data={category} />
+            ))}
+          </div>
+        </div>
+
         {/* ---------------------------------------------- product grid start ---------------------------------------------- */}
-        <div className="pt-20">
+        <div className="md:pt-14 pt-8">
           <h3 className="uppercase text-center text-sm text-[#00a34f]">
             menus
           </h3>
           <h1 className="text-center text-2xl md:text-3xl mb-3 font-semibold leading-tight">
             Featured Menus
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-5 gap-3 my-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-5 gap-3 md:my-14 my-8 ">
             {products?.data?.map((product) => (
               <ProductCard key={product?.id} data={product} />
             ))}
@@ -51,7 +66,9 @@ export async function getStaticProps() {
     "/api/products?populate=*&pagination[limit]=12"
   );
 
+  const categories = await fetchDataFromApi("/api/categories?populate=*");
+
   return {
-    props: { products },
+    props: { products, categories },
   };
 }
