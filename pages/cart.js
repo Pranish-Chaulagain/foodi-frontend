@@ -92,8 +92,7 @@ const Cart = () => {
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
                   onClick={handlePayment}
                 >
-                  {!loading && <>Checkout</>}
-                  {loading && <img src="/spinner.svg" />}
+                  {loading ? <img src="/spinner.svg" /> : "Checkout"}
                 </button>
                 {/* BUTTON END */}
               </div>

@@ -5,9 +5,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
   const [result, showResult] = useState(false);
+  const [loading, setLoading] = useState(false);
   const form = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault();
+    setLoading(true);
+
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_KEY,
@@ -20,6 +24,7 @@ const ContactForm = () => {
           console.log(result.text);
           message();
           e.target.reset();
+          setLoading(false);
           showResult(true);
         },
         (error) => {
@@ -74,12 +79,14 @@ const ContactForm = () => {
           rows={5}
           required
         ></textarea>
-        <input
+        <button
           type="submit"
-          value={"Send Message"}
+          disabled={loading}
           className="w-full h-[45px] rounded-md bg-[#00a34f] text-white md:text-base text-sm font-medium transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center cursor-pointer"
-        />
+        >
+          {loading ? <img src="/spinner.svg" /> : "Send Message"}
+        </button>
       </form>
     </div>
   );

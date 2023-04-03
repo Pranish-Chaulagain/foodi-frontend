@@ -1,13 +1,32 @@
+import { useState } from "react";
+import { Router } from "next/router";
+import { Provider } from "react-redux";
+import Head from "next/head";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import "@/styles/globals.css";
-import Head from "next/head";
-
-import store from "@/store/store";
-import { Provider } from "react-redux";
 import Top from "@/components/Top";
+import Loader from "@/components/Loader";
+import store from "@/store/store";
+import "@/styles/globals.css";
+import nProgress from "nprogress";
+nProgress.configure({ showSpinner: false });
 
 export default function App({ Component, pageProps }) {
+  const [loading, setLoading] = useState(false);
+
+  Router.events.on("routeChangeStart", () => {
+    nProgress.start();
+    setLoading(true);
+  });
+  Router.events.on("routeChangeComplete", () => {
+    nProgress.done();
+    setLoading(false);
+  });
+  Router.events.on("routeChangeError", () => {
+    nProgress.done();
+    setLoading(false);
+  });
+
   return (
     <>
       <Head>
@@ -25,13 +44,24 @@ export default function App({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+          integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
       </Head>
-      <Provider store={store}>
-        <Top />
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </Provider>
+      {loading ? (
+        <Loader />
+      ) : (
+        <Provider store={store}>
+          <Top />
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </Provider>
+      )}
     </>
   );
 }

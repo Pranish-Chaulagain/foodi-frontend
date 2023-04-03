@@ -81,8 +81,8 @@ const Header = () => {
 
         <div className="flex items-center gap-2 text-black">
           {/* ---------------------------------------------- Heart icon start ---------------------------------------------- */}
-          <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
-            <IoMdHeartEmpty className="text-[23px] md:text-[24px]" />
+          <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center md:hover:bg-black/[0.05] cursor-pointer relative">
+            <IoMdHeartEmpty className="text-[24px]" />
             <div
               className="h-[16px] md:h-[18px] min-w-[16px] md:min-w-[18px] rounded-full bg-red-600 absolute top-1 left-5 md:left-7
              text-white text-[10px] md:text[12px] flex justify-center items-center px-[3px] md:px-[5px]"
@@ -94,8 +94,8 @@ const Header = () => {
 
           {/* ---------------------------------------------- Cart icon start ---------------------------------------------- */}
           <Link href="/cart">
-            <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
-              <BsBag className="text-[20px] md:text-[21px]" />
+            <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center  md:hover:bg-black/[0.05] cursor-pointer relative">
+              <BsBag className="text-[21px]" />
               {totalQuantity > 0 && (
                 <span
                   className="h-[16px] md:h-[18px] min-w-[16px] md:min-w-[18px] rounded-full bg-red-600 absolute top-1 left-5 md:left-7
@@ -110,15 +110,15 @@ const Header = () => {
           {/* ----------------------- Cart icon end ----------------------- */}
 
           {/* ---------------------------------------------- Mobile menu icon start ---------------------------------------------- */}
-          <div className="w-8 md:w-12 h-8 md:h-12 rounded-full lg:hidden flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative -mr-2">
+          <div className="w-8 md:w-12 h-8 md:h-12 rounded-full lg:hidden flex justify-center items-center md:hover:bg-black/[0.05] cursor-pointer relative -mr-2">
             {mobileMenu ? (
               <VscChromeClose
-                className="md:text-[26px] text-[22px]"
+                className="text-[24px]"
                 onClick={() => setMobileMenu(false)}
               />
             ) : (
               <HiOutlineMenuAlt3
-                className="md:text-[28px] text-2xl"
+                className="text-[26px]"
                 onClick={() => setMobileMenu(true)}
               />
             )}

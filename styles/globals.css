@@ -28,6 +28,10 @@ body {
   user-select: none;
 }
 
+#nprogress .bar {
+  background: #ff1f1f !important;
+}
+
 #banner1 {
   background: linear-gradient(to right, #0000002f, #00000083),
     url("../public/banner1.jpg");

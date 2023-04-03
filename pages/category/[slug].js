@@ -16,7 +16,7 @@ const Category = ({ category, products, slug }) => {
     setPageIndex(1);
   }, [query]);
 
-  const { data, error, isLoading } = useSWR(
+  const { data } = useSWR(
     `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&pagination[page]=${pageIndex}&pagination[pageSize]=${maxResult}`,
     fetchDataFromApi,
     { fallbackData: products }
@@ -71,12 +71,6 @@ const Category = ({ category, products, slug }) => {
           </div>
         )}
         {/* PAGINATION BUTTONS END */}
-        {isLoading && (
-          <div className="absolute top-0 left-0 w-full h-full bg-[#fffafc] flex flex-col justify-center items-center">
-            <img src="/loader.gif" width={300} />
-            <span className="text-xl font-medium">Loading...</span>
-          </div>
-        )}
       </Wrapper>
     </div>
   );
