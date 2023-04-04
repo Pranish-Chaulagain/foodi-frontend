@@ -29,8 +29,7 @@ const Category = ({ category, products, slug }) => {
           <Link className="hover:underline" href="/">
             Home
           </Link>
-          /<span>Category</span>/
-          <span>{category?.data?.[0]?.attributes?.name}</span>
+          /<span>{category?.data?.[0]?.attributes?.name}</span>
         </div>
         <div className="text-center max-w-[800px] mx-auto mt-8 md:mt-0">
           <div className="text-2xl md:text-3xl mb-3 font-semibold leading-tight">

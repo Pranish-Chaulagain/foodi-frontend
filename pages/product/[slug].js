@@ -39,9 +39,16 @@ const ProductDetails = ({ product, products }) => {
           <Link className="hover:underline" href="/">
             Home
           </Link>
-          /<span>Menu</span>/<span>{p.name}</span>
+          /
+          <Link
+            className="hover:underline"
+            href={`/category/${p.categories?.data?.[0].attributes?.slug}`}
+          >
+            {p.categories?.data?.[0].attributes?.name}
+          </Link>
+          /<span>{p.name}</span>
         </div>
-        <div className="flex flex-col lg:flex-row md:px-5 gap-[50px] lg:gap-[100px]">
+        <div className="flex flex-col lg:flex-row md:px-5 gap-5 md:gap-[50px] lg:gap-[100px]">
           {/* ---------------------------------------------- LEFT COLUMN START ---------------------------------------------- */}
           <div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
             <ProductDetailsCarousel images={p.image.data} />
@@ -77,11 +84,10 @@ const ProductDetails = ({ product, products }) => {
                 </>
               )}
             </div>
-            <div className="md:text-lg text-base font-semibold"></div>
             <div className="md:text-base text-sm font-medium text-black/[0.5]">
               incl. of taxes
             </div>
-            <div className="md:text-base text-sm font-medium text-black/[0.5] mb-20">
+            <div className="md:text-base text-sm font-medium text-black/[0.5] mb-10 md:mb-20">
               {"(Also includes all applicable duties)"}
             </div>
 

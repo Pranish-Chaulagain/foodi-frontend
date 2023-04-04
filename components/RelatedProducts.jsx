@@ -25,7 +25,7 @@ const RelatedProducts = ({ products }) => {
   };
 
   return (
-    <div className="mt-[50px] md:mt-[100px] mb-[100px] md:mb-0">
+    <div className="md:pt-20 pt-0 md:pb-0 pb-8">
       <div className="md:text-2xl text-xl font-bold mb-5">
         You Might Also Like
       </div>

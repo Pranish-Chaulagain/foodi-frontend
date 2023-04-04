@@ -71,7 +71,7 @@ const SearchBar = ({ setMobileMenu }) => {
           <div
             id="search-results"
             ref={resultsRef}
-            className="absolute bg-white w-full lg:top-[40px] top-[52px] rounded-md border shadow-md lg:min-h-fit min-h-[260px] px-1 py-1 z-[1] md:text-base text-sm font-medium"
+            className="absolute bg-white w-full lg:top-[40px] top-[52px] lg:rounded-md border-b border-t lg:border border-0 lg:shadow-md lg:min-h-fit min-h-[260px] px-1 py-1 z-[1] md:text-base text-sm font-medium"
           >
             {data?.data?.length ? (
               data?.data?.map((item) => (
