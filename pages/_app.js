@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useState } from "react";
+import { Router } from "next/router";
 import { Provider } from "react-redux";
 import Head from "next/head";
 import Footer from "@/components/Footer";
@@ -10,22 +10,11 @@ import store from "@/store/store";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const handleStart = (url) => url !== router.asPath && setLoading(true);
-    const handleComplete = (url) => url === router.asPath && setLoading(false);
 
-    router.events.on("routeChangeStart", handleStart);
-    router.events.on("routeChangeComplete", handleComplete);
-    router.events.on("routeChangeError", handleComplete);
-
-    return () => {
-      router.events.off("routeChangeStart", handleStart);
-      router.events.off("routeChangeComplete", handleComplete);
-      router.events.off("routeChangeError", handleComplete);
-    };
-  });
+  Router.events.on("routeChangeStart", () => setLoading(true));
+  Router.events.on("routeChangeComplete", () => setLoading(false));
+  Router.events.on("routeChangeError", () => setLoading(false));
 
   return (
     <>
@@ -41,7 +30,7 @@ export default function App({ Component, pageProps }) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
       </Head>
