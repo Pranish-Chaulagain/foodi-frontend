@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Router } from "next/router";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { Provider } from "react-redux";
 import Head from "next/head";
 import Footer from "@/components/Footer";
@@ -8,23 +8,23 @@ import Top from "@/components/Top";
 import Loader from "@/components/Loader";
 import store from "@/store/store";
 import "@/styles/globals.css";
-import nProgress from "nprogress";
-nProgress.configure({ showSpinner: false });
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const handleStart = (url) => url !== router.asPath && setLoading(true);
+    const handleComplete = (url) => url === router.asPath && setLoading(false);
 
-  Router.events.on("routeChangeStart", () => {
-    nProgress.start();
-    setLoading(true);
-  });
-  Router.events.on("routeChangeComplete", () => {
-    nProgress.done();
-    setLoading(false);
-  });
-  Router.events.on("routeChangeError", () => {
-    nProgress.done();
-    setLoading(false);
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleComplete);
+    };
   });
 
   return (
@@ -43,13 +43,6 @@ export default function App({ Component, pageProps }) {
         <link
           href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
-          integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
         />
       </Head>
       {loading ? (
