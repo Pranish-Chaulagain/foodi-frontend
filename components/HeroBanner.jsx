@@ -16,7 +16,7 @@ const HeroBanner = () => {
           renderArrowPrev={(clickHandler, hasPrev) => (
             <div
               onClick={clickHandler}
-              className="absolute right-[55px] md:right-[70px] top-3 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
+              className="absolute right-[55px] md:right-[70px] top-2 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
             >
               <BiArrowBack className="text-sm md:text-lg" />
             </div>
@@ -24,7 +24,7 @@ const HeroBanner = () => {
           renderArrowNext={(clickHandler, hasNext) => (
             <div
               onClick={clickHandler}
-              className="absolute right-3 top-3 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
+              className="absolute right-2 top-2 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
             >
               <BiArrowBack className="rotate-180 text-sm md:text-lg" />
             </div>

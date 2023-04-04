@@ -61,9 +61,26 @@ const Header = () => {
       className={`w-full h-[70px] md:h-[80px] my-2 lg:px-3 bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
     >
       <Wrapper className="w-full h-[60px] flex justify-between items-center">
-        <Link href="/">
-          <Image src={Logo} alt="" className="w-[95px] md:w-[110px] mr-20" />
-        </Link>
+        <div className="flex gap-3 items-center">
+          {/* ---------------------------------------------- Mobile menu icon start ---------------------------------------------- */}
+          <div className="w-8 md:w-12 h-8 md:h-12 rounded-full lg:hidden flex justify-center items-center md:hover:bg-black/[0.05] cursor-pointer relative -mr-2">
+            {mobileMenu ? (
+              <VscChromeClose
+                className="text-[24px]"
+                onClick={() => setMobileMenu(false)}
+              />
+            ) : (
+              <HiOutlineMenuAlt3
+                className="text-[26px]"
+                onClick={() => setMobileMenu(true)}
+              />
+            )}
+          </div>
+          {/* ----------------------- Mobile menu icon ----------------------- */}
+          <Link href="/">
+            <Image src={Logo} alt="" className="w-[95px] md:w-[110px] mr-20" />
+          </Link>
+        </div>
 
         <Menu
           showCatMenu={showCatMenu}
@@ -108,22 +125,6 @@ const Header = () => {
           </Link>
 
           {/* ----------------------- Cart icon end ----------------------- */}
-
-          {/* ---------------------------------------------- Mobile menu icon start ---------------------------------------------- */}
-          <div className="w-8 md:w-12 h-8 md:h-12 rounded-full lg:hidden flex justify-center items-center md:hover:bg-black/[0.05] cursor-pointer relative -mr-2">
-            {mobileMenu ? (
-              <VscChromeClose
-                className="text-[24px]"
-                onClick={() => setMobileMenu(false)}
-              />
-            ) : (
-              <HiOutlineMenuAlt3
-                className="text-[26px]"
-                onClick={() => setMobileMenu(true)}
-              />
-            )}
-          </div>
-          {/* ----------------------- Mobile menu icon ----------------------- */}
         </div>
       </Wrapper>
     </header>
