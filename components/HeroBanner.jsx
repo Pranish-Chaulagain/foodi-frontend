@@ -13,6 +13,7 @@ const HeroBanner = () => {
           showThumbs={false}
           showStatus={false}
           interval={6000}
+          swipeable={false}
           renderArrowPrev={(clickHandler, hasPrev) => (
             <div
               onClick={clickHandler}

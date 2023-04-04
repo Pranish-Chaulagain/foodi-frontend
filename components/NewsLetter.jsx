@@ -4,8 +4,8 @@ import Wrapper from "./Wrapper";
 const NewsLetter = () => {
   return (
     <Wrapper>
-      <div className="py-14" id="newsletter">
-        <div className="flex flex-col gap-5 items-center text-center justify-center px-4 md:max-w-[700px] mx-auto">
+      <div className="md:py-14 py-8 mb-5" id="newsletter">
+        <div className="flex flex-col gap-5 items-center text-center justify-center md:px-4 md:max-w-[700px] mx-auto">
           <h1 className="md:text-3xl text-2xl font-semibold">
             Subscribe to our newsletter to get updates to our latest menus
           </h1>

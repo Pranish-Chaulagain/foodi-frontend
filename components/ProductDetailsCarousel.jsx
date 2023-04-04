@@ -9,6 +9,7 @@ const ProductDetailsCarousel = ({ images }) => {
         infiniteLoop={true}
         showIndicators={false}
         showStatus={false}
+        swipeable={false}
         thumbWidth={60}
         className="productCarousel"
       >

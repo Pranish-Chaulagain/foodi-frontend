@@ -11,17 +11,15 @@ export default function Home({ products, categories }) {
       <HeroBanner />
       <Wrapper>
         {/* ---------------------------------------------- heading and paragraph start ---------------------------------------------- */}
-        <div className="flex items-center py-10 px-10 gap-5 rounded-lg mt-5">
-          <div className="flex flex-col items-center justify-center gap-2 text-center">
-            <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
-              Bringing the Restaurant to You
-            </h1>
-            <p className="md:text-base font-medium text-sm">
-              We believe that everyone deserves the chance to enjoy the
-              restaurant experience from the comfort of their own home. That's
-              why we're dedicated to bringing the restaurant to you.
-            </p>
-          </div>
+        <div className="flex flex-col items-center justify-center gap-2 text-center pt-5 md:my-14 my-8 md:px-10">
+          <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
+            Bringing the Restaurant to You
+          </h1>
+          <p className="md:text-base font-medium text-sm">
+            We believe that everyone deserves the chance to enjoy the restaurant
+            experience from the comfort of their own home. That's why we're
+            dedicated to bringing the restaurant to you.
+          </p>
         </div>
 
         {/* ----------------------- heading and paragraph end ----------------------- */}
@@ -48,7 +46,7 @@ export default function Home({ products, categories }) {
           <h1 className="text-center text-2xl md:text-3xl mb-3 font-semibold leading-tight">
             Featured Menus
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-5 gap-3 md:my-14 my-8 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:my-14 my-8">
             {products?.data?.map((product) => (
               <ProductCard key={product?.id} data={product} />
             ))}
