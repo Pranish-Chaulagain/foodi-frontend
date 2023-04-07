@@ -116,7 +116,7 @@ const Header = () => {
               {totalQuantity > 0 && (
                 <span
                   className="h-[16px] md:h-[18px] min-w-[16px] md:min-w-[18px] rounded-full bg-red-600 absolute top-1 left-5 md:left-7
-                  text-white text-[10px] md:text[12px] flex justify-center items-center"
+                  text-white text-[10px] md:text[12px] flex justify-center items-center px-[3px] md:px-[5px]"
                 >
                   {totalQuantity}
                 </span>
