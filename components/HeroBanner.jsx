@@ -45,7 +45,7 @@ const HeroBanner = () => {
                 in every order.
               </p>
               <button
-                className="px-5 md:h-[54px] h-[44px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
+                className="md:px-5 px-3 md:h-[54px] h-[44px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now
@@ -67,7 +67,7 @@ const HeroBanner = () => {
                 savory, our menu has something to satisfy every craving.
               </p>
               <button
-                className="px-5 h-[54px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
+                className="md:px-5 px-3 md:h-[54px] h-[44px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now
@@ -90,7 +90,7 @@ const HeroBanner = () => {
                 house.
               </p>
               <button
-                className="px-5 h-[54px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
+                className="md:px-5 px-3 md:h-[54px] h-[44px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now
