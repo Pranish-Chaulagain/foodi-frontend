@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../public/logo.svg";
 import { FiShoppingBag, FiSearch, FiUser } from "react-icons/fi";
-import { HiMenuAlt3 } from "react-icons/hi";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { fetchDataFromApi } from "@/utils/api";
 import { useSelector } from "react-redux";
 
@@ -66,7 +66,7 @@ const Header = () => {
           <div className="flex gap-5 items-center lg:w-[136px] w-full">
             {/* ---------------------------------------------- Mobile menu icon start ---------------------------------------------- */}
             <div className="lg:hidden flex justify-center items-center cursor-pointer relative -mr-2">
-              <HiMenuAlt3
+              <HiOutlineMenuAlt3
                 className="text-[26px]"
                 onClick={() => setMobileMenu(true)}
               />
