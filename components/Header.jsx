@@ -83,15 +83,6 @@ const Header = () => {
             categories={categories}
           />
 
-          {mobileMenu && (
-            <MenuMobile
-              showCatMenu={showCatMenu}
-              setShowCatMenu={setShowCatMenu}
-              setMobileMenu={setMobileMenu}
-              categories={categories}
-            />
-          )}
-
           <div className="flex items-center justify-end md:gap-7 gap-6 text-black flex-shrink-0">
             {/* ---------------------------------------------- Search icon start ---------------------------------------------- */}
             <div
@@ -131,6 +122,14 @@ const Header = () => {
         </Wrapper>
       </header>
       {searchModal && <Search setSearchModal={setSearchModal} />}
+      {mobileMenu && (
+        <MenuMobile
+          showCatMenu={showCatMenu}
+          setShowCatMenu={setShowCatMenu}
+          setMobileMenu={setMobileMenu}
+          categories={categories}
+        />
+      )}
     </>
   );
 };
