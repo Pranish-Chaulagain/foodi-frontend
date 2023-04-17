@@ -34,7 +34,7 @@ const MenuMobile = ({
   return (
     <div
       ref={mobileMenuRef}
-      className="mobile-menu lg:hidden absolute top-0 left-0 sm:w-[500px] w-full h-[100vh] bg-white font-bold text-black z-10 shadow-none sm:shadow-2xl"
+      className="mobile-menu lg:hidden absolute top-0 left-0 sm:w-[500px] w-full h-[100vh] bg-white font-bold text-black shadow-none sm:shadow-2xl z-20"
     >
       <div className="flex items-center justify-between px-5 w-full h-[60px] md:h-[70px] my-1">
         <Link className="w-[95px] md:w-[110px]" href="/">
