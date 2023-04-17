@@ -65,7 +65,7 @@ const Header = () => {
         <Wrapper className="w-full h-[60px] flex justify-between items-center">
           <div className="flex gap-5 items-center lg:w-[136px] w-full">
             {/* ---------------------------------------------- Mobile menu icon start ---------------------------------------------- */}
-            <div className="lg:hidden flex justify-center items-center cursor-pointer relative -mr-2">
+            <div className="lg:hidden flex justify-center items-center cursor-pointer -mr-2">
               <HiOutlineMenuAlt3
                 className="text-[26px]"
                 onClick={() => setMobileMenu(true)}
