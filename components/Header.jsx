@@ -7,7 +7,8 @@ import Search from "./Search";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../public/logo.svg";
-import { FiShoppingBag, FiSearch, FiUser, FiMenu } from "react-icons/fi";
+import { FiShoppingBag, FiSearch, FiUser } from "react-icons/fi";
+import { HiMenuAlt3 } from "react-icons/hi";
 import { fetchDataFromApi } from "@/utils/api";
 import { useSelector } from "react-redux";
 
@@ -65,8 +66,8 @@ const Header = () => {
           <div className="flex gap-5 items-center lg:w-[136px] w-full">
             {/* ---------------------------------------------- Mobile menu icon start ---------------------------------------------- */}
             <div className="lg:hidden flex justify-center items-center cursor-pointer relative -mr-2">
-              <FiMenu
-                className="text-[24px]"
+              <HiMenuAlt3
+                className="text-[26px]"
                 onClick={() => setMobileMenu(true)}
               />
             </div>
@@ -97,16 +98,16 @@ const Header = () => {
               className="cursor-pointer"
               onClick={() => setSearchModal(true)}
             >
-              <FiSearch className="text-[24px]" />
+              <FiSearch className="md:text-[24px] text-[23px]" />
             </div>
             {/* ----------------------- Search icon end ----------------------- */}
 
             {/* ---------------------------------------------- Cart icon start ---------------------------------------------- */}
             <Link href="/cart" className="cursor-pointer relative">
-              <FiShoppingBag className="text-[24px]" />
+              <FiShoppingBag className="md:text-[24px] text-[23px]" />
               {totalQuantity > 0 && (
                 <span
-                  className="h-[16px] md:h-[18px] min-w-[16px] md:min-w-[18px] rounded-full bg-red-600 absolute -top-1 md:-top-2 left-[11px] md:left-3
+                  className="h-[16px] md:h-[18px] min-w-[16px] md:min-w-[18px] rounded-full bg-red-600 absolute -top-1 md:-top-2 left-3
                   text-white text-[10px] md:text-[12px] flex justify-center items-center px-[4px] md:px-[5px]"
                 >
                   {totalQuantity}

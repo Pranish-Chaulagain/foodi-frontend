@@ -41,7 +41,7 @@ const MenuMobile = ({
           <Image src={Logo} alt="" className="w-[95px] md:w-[110px]" />
         </Link>
         <div onClick={() => setMobileMenu(false)}>
-          <FiX className="text-[24px]" />
+          <FiX className="text-[26px]" />
         </div>
       </div>
 
