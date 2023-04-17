@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Success = () => {
   return (
-    <div className="min-h-[650px] flex items-center">
+    <div className="h-[calc(100vh_-_116px)] flex">
       <Wrapper>
-        <div className="max-w-[600px] rounded-lg p-5 border border-black mx-auto flex flex-col">
+        <div className="mt-[25vh] max-w-[600px] rounded-lg p-5 border border-black mx-auto flex flex-col">
           <div className="md:text-2xl text-xl font-bold">
             Thanks for shopping with us!
           </div>

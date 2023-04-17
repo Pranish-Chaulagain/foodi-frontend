@@ -1,61 +1,59 @@
 import Link from "next/link";
 import React from "react";
 import { BsChevronDown } from "react-icons/bs";
-import SearchBar from "./SearchBar";
 
 const data = [
   { id: 1, name: "Home", url: "/" },
-  { id: 2, name: "About", url: "/about" },
+  { id: 3, name: "About", url: "/about" },
   { id: 3, name: "Categories", subMenu: true },
   { id: 4, name: "Contact", url: "/contact" },
 ];
 
 const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
   return (
-    <div className="lg:flex hidden w-full items-center justify-between pr-6 gap-8">
-      <ul className="flex items-center gap-8 font-medium text-black">
-        {data.map((item) => {
-          return (
-            <React.Fragment key={item.id}>
-              {!!item?.subMenu ? (
-                <li
-                  className="cursor-pointer flex items-center gap-2 relative"
-                  onMouseEnter={() => setShowCatMenu(true)}
-                  onMouseLeave={() => setShowCatMenu(false)}
-                >
-                  {item.name}
-                  <BsChevronDown size={14} />
-
-                  {showCatMenu && (
-                    <ul className="bg-white absolute top-6 left-0 min-w-[220px] px-2 py-2 text-black shadow rounded-md">
-                      {categories?.map(({ attributes: c, id }) => {
-                        return (
-                          <Link
-                            key={id}
-                            href={`/category/${c.slug}`}
-                            onClick={() => setShowCatMenu(false)}
-                          >
-                            <li className="h-10 flex justify-between items-center px-3 hover:bg-black/[0.03] rounded-md">
-                              {c.name}
-                              <span className="opacity-50 text-sm ">{`(${c.products.data.length})`}</span>
-                            </li>
-                          </Link>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </li>
-              ) : (
-                <li className="cursor-pointer">
-                  <Link href={item?.url}>{item.name}</Link>
-                </li>
-              )}
-            </React.Fragment>
-          );
-        })}
-      </ul>
-      <SearchBar />
-    </div>
+    <ul className="lg:flex hidden items-center gap-8 font-medium text-black">
+      {data.map((item) => {
+        return (
+          <React.Fragment key={item.id}>
+            {!!item?.subMenu ? (
+              <li
+                className="cursor-pointer flex items-center gap-2 relative"
+                onMouseEnter={() => setShowCatMenu(true)}
+                onMouseLeave={() => setShowCatMenu(false)}
+              >
+                {item.name}
+                <BsChevronDown size={14} />
+                {showCatMenu && (
+                  <ul
+                    id="category-items"
+                    className="bg-white absolute top-6 left-0 min-w-[220px] px-2 py-2 text-black shadow rounded-md"
+                  >
+                    {categories?.map(({ attributes: c, id }) => {
+                      return (
+                        <Link
+                          key={id}
+                          href={`/category/${c.slug}`}
+                          onClick={() => setShowCatMenu(false)}
+                        >
+                          <li className="h-10 flex justify-between items-center px-3 hover:bg-black/[0.03] rounded-md">
+                            {c.name}
+                            <span className="opacity-50 text-sm ">{`(${c.products.data.length})`}</span>
+                          </li>
+                        </Link>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+            ) : (
+              <li className="cursor-pointer">
+                <Link href={item?.url}>{item.name}</Link>
+              </li>
+            )}
+          </React.Fragment>
+        );
+      })}
+    </ul>
   );
 };
 

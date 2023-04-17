@@ -8,6 +8,7 @@ import Top from "@/components/Top";
 import Loader from "@/components/Loader";
 import store from "@/store/store";
 import "@/styles/globals.css";
+import NewsLetter from "@/components/NewsLetter";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
@@ -41,6 +42,7 @@ export default function App({ Component, pageProps }) {
           <Top />
           <Header />
           <Component {...pageProps} />
+          <NewsLetter />
           <Footer />
         </Provider>
       )}

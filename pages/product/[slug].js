@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Wrapper from "@/components/Wrapper";
-import { IoMdHeartEmpty } from "react-icons/io";
+import { SlPaypal } from "react-icons/sl";
 import ProductDetailsCarousel from "@/components/ProductDetailsCarousel";
 import RelatedProducts from "@/components/RelatedProducts";
 import { fetchDataFromApi } from "@/utils/api";
@@ -165,8 +165,8 @@ const ProductDetails = ({ product, products }) => {
                 className="w-full h-[54px] rounded-md border border-black md:text-lg text-base font-medium transition-transform 
                 active:scale-95 flex items-center justify-center gap-2 hover:opacity-75"
               >
-                Wishlist
-                <IoMdHeartEmpty size={20} />
+                Order Now
+                <SlPaypal size={20} />
               </button>
               {/* WISHLIST BUTTON END */}
             </div>

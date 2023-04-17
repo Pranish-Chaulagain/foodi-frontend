@@ -96,7 +96,6 @@ function contact() {
           </div>
         </Wrapper>
       </div>
-      <NewsLetter />
     </>
   );
 }

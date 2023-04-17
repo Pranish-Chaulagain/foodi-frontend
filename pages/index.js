@@ -1,6 +1,5 @@
 import CategoryCard from "@/components/CategoryCard";
 import HeroBanner from "@/components/HeroBanner";
-import NewsLetter from "@/components/NewsLetter";
 import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/Wrapper";
 import { fetchDataFromApi } from "@/utils/api";
@@ -54,7 +53,6 @@ export default function Home({ products, categories }) {
         </div>
         {/* ----------------------- product grid end ----------------------- */}
       </Wrapper>
-      <NewsLetter />
     </main>
   );
 }

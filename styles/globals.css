@@ -28,8 +28,17 @@ body {
   user-select: none;
 }
 
-#nprogress .bar {
-  background: #ff1f1f !important;
+.search-modal {
+  transform: translateY(100%);
+  animation: slideSearchWindow 0.5s ease forwards;
+}
+
+#category-items {
+  animation: dropDownEffect 0.3s ease forwards;
+}
+
+#category-items:empty {
+  display: none;
 }
 
 #banner1 {
@@ -69,16 +78,6 @@ body {
   outline: 0;
 }
 
-#search-bar {
-  border: 0;
-  outline: 0;
-  padding: 10px 14px 9px 38px;
-}
-
-#search-icon {
-  font-size: 18px;
-}
-
 #newsletter input {
   border: 0;
   outline: 0;
@@ -102,6 +101,11 @@ body {
 
 .toastBody {
   font-family: "Urbanist", sans-serif !important;
+}
+
+.mobile-menu {
+  transform: translateX(-100%);
+  animation: slideCartWindow 0.3s ease forwards;
 }
 
 /* PRODUCT DETAILS CAROUSEL STYLING CUSTOMIZATION START */
@@ -187,4 +191,31 @@ body {
 }
 .markdown ul li {
   margin: 10px 0 10px 20px;
+}
+
+@keyframes slideCartWindow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes dropDownEffect {
+  0% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideSearchWindow {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

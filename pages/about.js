@@ -115,7 +115,6 @@ const about = () => {
           </div>
         </Wrapper>
       </div>
-      <NewsLetter />
     </>
   );
 };

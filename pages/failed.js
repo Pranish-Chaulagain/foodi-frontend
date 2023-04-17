@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Failed = () => {
   return (
-    <div className="min-h-[650px] flex items-center">
+    <div className="h-[calc(100vh_-_116px)] flex">
       <Wrapper>
-        <div className="max-w-[600px] rounded-lg p-5 border border-black mx-auto flex flex-col">
+        <div className="mt-[25vh] max-w-[600px] rounded-lg p-5 border border-black mx-auto flex flex-col">
           <div className="md:text-2xl text-xl font-bold">Payment failed!</div>
           <div className="md:text-base text-sm mt-5">
             For any product related query, drop an email to

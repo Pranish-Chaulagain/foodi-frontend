@@ -35,9 +35,10 @@ const NewsLetter = () => {
             </p>
             <p className="md:text-base text-sm">
               Read our privacy policy
-              <span className="font-semibold underline cursor-pointer">
-                Here
+              <span className="font-semibold underline cursor-pointer ml-1">
+                here
               </span>
+              .
             </p>
           </div>
         </div>
