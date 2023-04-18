@@ -36,12 +36,12 @@ const MenuMobile = ({
       ref={mobileMenuRef}
       className="mobile-menu lg:hidden fixed top-0 left-0 sm:w-[500px] w-full h-[100vh] bg-white font-bold text-black shadow-none sm:shadow-2xl z-20"
     >
-      <div className="flex items-center justify-between px-5 w-full h-[60px] md:h-[70px] my-1">
+      <div className="flex items-center justify-between px-5 w-full h-[60px] md:h-[70px] my-1 border-b">
         <Link className="w-[95px] md:w-[110px]" href="/">
           <Image src={Logo} alt="" className="w-[95px] md:w-[110px]" />
         </Link>
         <div onClick={() => setMobileMenu(false)}>
-          <FiX className="text-[26px]" />
+          <FiX className="md:text-[30px] text-[26px]" />
         </div>
       </div>
 

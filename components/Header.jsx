@@ -7,7 +7,8 @@ import Search from "./Search";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../public/logo.svg";
-import { FiShoppingBag, FiSearch, FiUser } from "react-icons/fi";
+import { FiShoppingBag, FiUser } from "react-icons/fi";
+import { RiSearchLine } from "react-icons/ri";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { fetchDataFromApi } from "@/utils/api";
 import { useSelector } from "react-redux";
@@ -55,7 +56,7 @@ const Header = () => {
     setCategories(data);
   };
 
-  const authenticated = false;
+  const authenticated = true;
 
   return (
     <>
@@ -89,7 +90,7 @@ const Header = () => {
               className="cursor-pointer"
               onClick={() => setSearchModal(true)}
             >
-              <FiSearch className="md:text-[24px] text-[23px]" />
+              <RiSearchLine className="md:text-[24px] text-[23px]" />
             </div>
             {/* ----------------------- Search icon end ----------------------- */}
 

@@ -31,7 +31,7 @@ const Search = ({ setSearchModal }) => {
             <Image src={Logo} alt="" className="w-[95px] md:w-[110px]" />
           </Link>
           <FiX
-            className="text-black text-[30px] cursor-pointer"
+            className="text-black md:text-[30px] text-[26px] cursor-pointer"
             onClick={() => setSearchModal(false)}
           />
         </div>
@@ -49,6 +49,11 @@ const Search = ({ setSearchModal }) => {
           />
         </div>
         <div className="my-5">
+          {!showResults && (
+            <div className="md:text-xl text-base text-center mt-10 pt-10 font-medium text-gray-700">
+              Start typing to see what you are looking for
+            </div>
+          )}
           {showResults && (
             <div className=" bg-white w-full lg:min-h-fit min-h-[260px] px-1 py-1 z-[1] md:text-base text-sm font-medium">
               {data?.data?.length ? (
