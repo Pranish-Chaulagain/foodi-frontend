@@ -50,8 +50,8 @@ const Search = ({ setSearchModal }) => {
         </div>
         <div className="my-5">
           {!showResults && (
-            <div className="md:text-xl text-base text-center mt-10 pt-10 font-medium text-gray-700">
-              Start typing to see what you are looking for
+            <div className="w-full h-[220px] items-center text-center text-gray-800 flex justify-center md:text-xl text-base">
+              Start typing what you are looking for
             </div>
           )}
           {showResults && (
@@ -83,7 +83,7 @@ const Search = ({ setSearchModal }) => {
                   </div>
                 ))
               ) : (
-                <div className="w-full h-[220px] items-center text-center flex justify-center md:text-xl text-base">
+                <div className="w-full h-[220px] items-center text-center text-gray-800 flex justify-center md:text-xl text-base">
                   No search results found
                 </div>
               )}

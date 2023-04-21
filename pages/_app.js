@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Router } from "next/router";
+import { Router, useRouter } from "next/router";
 import { Provider } from "react-redux";
 import Head from "next/head";
 import Footer from "@/components/Footer";
@@ -9,6 +9,7 @@ import Loader from "@/components/Loader";
 import store from "@/store/store";
 import "@/styles/globals.css";
 import NewsLetter from "@/components/NewsLetter";
+import { AuthUserProvider } from "@/firebase/auth";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
@@ -16,6 +17,10 @@ export default function App({ Component, pageProps }) {
   Router.events.on("routeChangeStart", () => setLoading(true));
   Router.events.on("routeChangeComplete", () => setLoading(false));
   Router.events.on("routeChangeError", () => setLoading(false));
+
+  const router = useRouter();
+  const { asPath } = router;
+  const noNav = ["/login", "/register"];
 
   return (
     <>
@@ -35,17 +40,19 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      {loading ? (
-        <Loader />
-      ) : (
-        <Provider store={store}>
-          <Top />
-          <Header />
-          <Component {...pageProps} />
-          <NewsLetter />
-          <Footer />
-        </Provider>
-      )}
+      <AuthUserProvider>
+        {loading ? (
+          <Loader />
+        ) : (
+          <Provider store={store}>
+            {noNav.includes(asPath) ? null : <Top />}
+            {noNav.includes(asPath) ? null : <Header />}
+            <Component {...pageProps} />
+            {noNav.includes(asPath) ? null : <NewsLetter />}
+            {noNav.includes(asPath) ? null : <Footer />}
+          </Provider>
+        )}
+      </AuthUserProvider>
     </>
   );
 }

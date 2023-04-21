@@ -3,15 +3,20 @@ import Wrapper from "./Wrapper";
 import Menu from "./Menu";
 import MenuMobile from "./MenuMobile";
 import Search from "./Search";
+import Profile from "./Profile";
 
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../public/logo.svg";
-import { FiShoppingBag, FiUser } from "react-icons/fi";
+import { FiShoppingBag } from "react-icons/fi";
 import { RiSearchLine } from "react-icons/ri";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+
 import { fetchDataFromApi } from "@/utils/api";
 import { useSelector } from "react-redux";
+import { useAuth } from "@/firebase/auth";
+import { useRouter } from "next/router";
+import Loader from "./Loader";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -56,9 +61,23 @@ const Header = () => {
     setCategories(data);
   };
 
-  const authenticated = true;
+  {
+    /* ---------------------------------------------- Authentication start ---------------------------------------------- */
+  }
+  const { authUser, isLoading, signOut } = useAuth();
+  const router = useRouter();
+  useEffect(() => {
+    if (!isLoading && !authUser) {
+      router.push("/login");
+    }
+  }, [authUser, isLoading]);
+  {
+    /* ---------------------------------------------- Authentication ends ---------------------------------------------- */
+  }
 
-  return (
+  return !authUser ? (
+    <Loader />
+  ) : (
     <>
       <header
         className={`w-full h-[70px] md:h-[80px] my-1 lg:px-3 bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
@@ -93,7 +112,6 @@ const Header = () => {
               <RiSearchLine className="md:text-[24px] text-[23px]" />
             </div>
             {/* ----------------------- Search icon end ----------------------- */}
-
             {/* ---------------------------------------------- Cart icon start ---------------------------------------------- */}
             <Link href="/cart" className="cursor-pointer relative">
               <FiShoppingBag className="md:text-[24px] text-[23px]" />
@@ -107,18 +125,9 @@ const Header = () => {
               )}
             </Link>
             {/* ----------------------- Cart icon end ----------------------- */}
-
-            {authenticated ? (
-              <div className="cursor-pointer">
-                <div className="w-8 md:w-[32px] h-8 md:h-[32px] object-cover rounded-full flex justify-center items-center overflow-hidden">
-                  <img src="/a1.jpg" alt="" />
-                </div>
-              </div>
-            ) : (
-              <div className="cursor-pointer">
-                <FiUser className="text-[24px]" />
-              </div>
-            )}
+            {/* ----------------------- User profile start ----------------------- */}
+            <Profile authUser={authUser} signOut={signOut} />
+            {/* ----------------------- User profile end ----------------------- */}
           </div>
         </Wrapper>
       </header>
