@@ -108,8 +108,8 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full mt-3 py-3 rounded-full bg-[#00a34f] text-white md:text-base text-sm font-medium transition-transform 
-                  active:scale-95 hover:opacity-75 text-center flex items-center justify-center"
+          className="w-full h-[54px] rounded-full bg-[#00a34f] text-white md:text-lg text-base font-medium transition-transform 
+                  active:scale-95 hover:opacity-75 flex items-center justify-center"
         >
           {loading ? <img src="/spinner.svg" /> : "Send Message"}
         </button>

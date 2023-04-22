@@ -92,7 +92,7 @@ const Cart = () => {
                   {/* BUTTON START */}
                   <button
                     className="w-full h-[54px] rounded-full bg-[#00a34f] text-white md:text-lg text-base font-medium transition-transform 
-                  active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
+                            active:scale-95 hover:opacity-75 flex items-center justify-center"
                     onClick={handlePayment}
                   >
                     {loading ? <img src="/spinner.svg" /> : "Checkout"}
