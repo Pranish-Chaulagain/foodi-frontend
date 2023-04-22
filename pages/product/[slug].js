@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Wrapper from "@/components/Wrapper";
-import { FiCreditCard } from "react-icons/fi";
+
 import ProductDetailsCarousel from "@/components/ProductDetailsCarousel";
 import RelatedProducts from "@/components/RelatedProducts";
 import { fetchDataFromApi } from "@/utils/api";
@@ -163,10 +163,9 @@ const ProductDetails = ({ product, products }) => {
               {/* WISHLIST BUTTON START */}
               <button
                 className="w-full h-[54px] rounded-full border border-black md:text-lg text-base font-medium transition-transform 
-                active:scale-95 flex items-center justify-center gap-2 hover:opacity-75"
+                active:scale-95 flex items-center justify-center hover:opacity-75"
               >
                 Order Now
-                <FiCreditCard size={20} />
               </button>
               {/* WISHLIST BUTTON END */}
             </div>
