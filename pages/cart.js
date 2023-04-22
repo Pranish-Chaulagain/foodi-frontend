@@ -91,7 +91,7 @@ const Cart = () => {
 
                   {/* BUTTON START */}
                   <button
-                    className="w-full h-[54px] rounded-md bg-[#00a34f] text-white md:text-lg text-base font-medium transition-transform 
+                    className="w-full h-[54px] rounded-full bg-[#00a34f] text-white md:text-lg text-base font-medium transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
                     onClick={handlePayment}
                   >
@@ -124,7 +124,7 @@ const Cart = () => {
           </span>
           <Link
             href="/"
-            className="mt-8 px-10 h-[54px] rounded-md bg-[#00a34f] text-white md:text-lg text-base font-medium transition-transform 
+            className="mt-8 px-10 h-[54px] rounded-full bg-[#00a34f] text-white md:text-lg text-base font-medium transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center"
           >
             Continue Shopping

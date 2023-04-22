@@ -17,17 +17,17 @@ const HeroBanner = () => {
           renderArrowPrev={(clickHandler, hasPrev) => (
             <div
               onClick={clickHandler}
-              className="absolute right-[55px] md:right-[70px] top-2 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
+              className="absolute right-[60px] md:right-[70px] top-2 w-[45px] md:w-[50px] h-[45px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
             >
-              <BiArrowBack className="text-sm md:text-lg" />
+              <BiArrowBack className="text-base md:text-lg" />
             </div>
           )}
           renderArrowNext={(clickHandler, hasNext) => (
             <div
               onClick={clickHandler}
-              className="absolute right-2 top-2 w-[40px] md:w-[50px] h-[40px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
+              className="absolute right-2 top-2 w-[45px] md:w-[50px] h-[45px] md:h-[50px] bg-white z-10 flex items-center justify-center cursor-pointer hover:opacity-90 rounded-md"
             >
-              <BiArrowBack className="rotate-180 text-sm md:text-lg" />
+              <BiArrowBack className="rotate-180 text-base md:text-lg" />
             </div>
           )}
         >
@@ -45,7 +45,7 @@ const HeroBanner = () => {
                 in every order.
               </p>
               <button
-                className="md:px-5 px-4 md:h-[54px] h-[44px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
+                className="md:px-6 px-5 md:h-[54px] h-[50px] rounded-full bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now
@@ -67,7 +67,7 @@ const HeroBanner = () => {
                 savory, our menu has something to satisfy every craving.
               </p>
               <button
-                className="md:px-5 px-4 md:h-[54px] h-[44px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
+                className="md:px-6 px-5 md:h-[54px] h-[50px] rounded-full bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now
@@ -90,7 +90,7 @@ const HeroBanner = () => {
                 house.
               </p>
               <button
-                className="md:px-5 px-4 md:h-[54px] h-[44px] rounded-md bg-white text-black md:text-lg text-base font-semibold transition-transform 
+                className="md:px-6 px-5 md:h-[54px] h-[50px] rounded-full bg-white text-black md:text-lg text-base font-semibold transition-transform 
                   active:scale-95 hover:opacity-75 flex items-center justify-center gap-2"
               >
                 Order now

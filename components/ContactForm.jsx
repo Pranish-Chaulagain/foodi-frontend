@@ -50,40 +50,66 @@ const ContactForm = () => {
     <div className="pt-8">
       <ToastContainer bodyClassName="toastBody" />
       <form
-        id="contact-form"
         ref={form}
         onSubmit={sendEmail}
         className="flex flex-col gap-4 align-baseline"
       >
-        <input
-          name="fullName"
-          className="md:text-base text-sm border-0 ring-1 ring-gray-300 focus:ring-[#00a34f] px-4 py-2 w-full rounded-md"
-          placeholder="Name"
-          autoComplete="off"
-          type="text"
-          required
-        />
-        <input
-          name="email"
-          className="md:text-base text-sm border-0 ring-1 ring-gray-300 focus:ring-[#00a34f] px-4 py-2 w-full rounded-md"
-          placeholder="Email"
-          autoComplete="off"
-          type="email"
-          required
-        />
-        <textarea
-          name="message"
-          className="md:text-base text-sm border-0 ring-1 ring-gray-300 focus:ring-[#00a34f] px-4 py-2 w-full rounded-md"
-          placeholder="Message"
-          autoComplete="off"
-          rows={5}
-          required
-        ></textarea>
+        <div>
+          <label
+            htmlFor="full-name"
+            className="block md:text-base text-sm font-medium leading-6"
+          >
+            Name
+          </label>
+          <input
+            name="fullName"
+            id="full-name"
+            className="block w-full font-medium border-black focus:border-[#00a34f] border-b outline-none py-2 px-3 shadow-sm md:text-base text-sm sm:leading-6"
+            autoComplete="off"
+            type="text"
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="email"
+            className="block md:text-base text-sm font-medium leading-6"
+          >
+            Email
+          </label>
+          <input
+            name="email"
+            id="email"
+            className="block w-full font-medium border-black focus:border-[#00a34f] border-b outline-none py-2 px-3 shadow-sm md:text-base text-sm sm:leading-6"
+            autoComplete="off"
+            type="email"
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="message"
+            className="block md:text-base text-sm font-medium leading-6"
+          >
+            Message
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            className="block w-full font-medium border-black focus:border-[#00a34f] border-b outline-none py-2 px-3 shadow-sm md:text-base text-sm sm:leading-6"
+            autoComplete="off"
+            rows={5}
+            required
+          ></textarea>
+        </div>
+
         <button
           type="submit"
           disabled={loading}
-          className="w-full h-[45px] rounded-md bg-[#00a34f] text-white md:text-base text-sm font-medium transition-transform 
-                  active:scale-95 hover:opacity-75 flex items-center justify-center cursor-pointer"
+          className="w-full mt-3 py-3 rounded-full bg-[#00a34f] text-white md:text-base text-sm font-medium transition-transform 
+                  active:scale-95 hover:opacity-75 text-center"
         >
           {loading ? <img src="/spinner.svg" /> : "Send Message"}
         </button>

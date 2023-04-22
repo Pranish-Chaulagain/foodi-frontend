@@ -49,7 +49,7 @@ const Category = ({ category, products, slug }) => {
         {data?.meta?.pagination?.total > maxResult && (
           <div className="flex gap-3 items-center justify-center my-16 md:my-0">
             <button
-              className={`rounded py-2 px-4 bg-[#00a34f] text-white disabled:bg-gray-200 disabled:text-gray-500`}
+              className={`rounded-full py-2 px-5 bg-[#00a34f] text-white disabled:bg-gray-200 disabled:text-gray-500`}
               disabled={pageIndex === 1}
               onClick={() => setPageIndex(pageIndex - 1)}
             >
@@ -61,7 +61,7 @@ const Category = ({ category, products, slug }) => {
             }`}</span>
 
             <button
-              className={`rounded py-2 px-4 bg-[#00a34f] text-white disabled:bg-gray-200 disabled:text-gray-500`}
+              className={`rounded-full py-2 px-5 bg-[#00a34f] text-white disabled:bg-gray-200 disabled:text-gray-500`}
               disabled={pageIndex === (data && data.meta.pagination.pageCount)}
               onClick={() => setPageIndex(pageIndex + 1)}
             >

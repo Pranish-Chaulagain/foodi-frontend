@@ -1,11 +1,26 @@
 import CategoryCard from "@/components/CategoryCard";
 import HeroBanner from "@/components/HeroBanner";
+import Loader from "@/components/Loader";
 import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/Wrapper";
+import { useAuth } from "@/firebase/auth";
 import { fetchDataFromApi } from "@/utils/api";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home({ products, categories }) {
-  return (
+  const { authUser, isLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoading && !authUser) {
+      router.push("/login");
+    }
+  }, [authUser, isLoading]);
+
+  return !authUser ? (
+    <Loader />
+  ) : (
     <main>
       <HeroBanner />
       <Wrapper>

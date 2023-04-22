@@ -135,7 +135,7 @@ const ProductDetails = ({ product, products }) => {
             <div className="flex items-center justify-between gap-2 mb-10">
               {/* ADD TO CART BUTTON START */}
               <button
-                className="w-full h-[54px] rounded-md bg-[#00a34f] text-white md:text-lg text-base font-medium transition-transform 
+                className="w-full h-[54px] rounded-full bg-[#00a34f] text-white md:text-lg text-base font-medium transition-transform 
                 active:scale-95 hover:opacity-75"
                 onClick={() => {
                   if (!selectedSize) {
@@ -162,7 +162,7 @@ const ProductDetails = ({ product, products }) => {
 
               {/* WISHLIST BUTTON START */}
               <button
-                className="w-full h-[54px] rounded-md border border-black md:text-lg text-base font-medium transition-transform 
+                className="w-full h-[54px] rounded-full border border-black md:text-lg text-base font-medium transition-transform 
                 active:scale-95 flex items-center justify-center gap-2 hover:opacity-75"
               >
                 Order Now
