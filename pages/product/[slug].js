@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Wrapper from "@/components/Wrapper";
-import { SlPaypal } from "react-icons/sl";
+import { FiCreditCard } from "react-icons/fi";
 import ProductDetailsCarousel from "@/components/ProductDetailsCarousel";
 import RelatedProducts from "@/components/RelatedProducts";
 import { fetchDataFromApi } from "@/utils/api";
@@ -166,7 +166,7 @@ const ProductDetails = ({ product, products }) => {
                 active:scale-95 flex items-center justify-center gap-2 hover:opacity-75"
               >
                 Order Now
-                <SlPaypal size={20} />
+                <FiCreditCard size={20} />
               </button>
               {/* WISHLIST BUTTON END */}
             </div>
